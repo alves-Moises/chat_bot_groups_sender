@@ -1,4 +1,4 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth} = require('whatsapp-web.js');
 const chalk = require("chalk");
 
 const qrcode = require("qrcode-terminal")
@@ -18,7 +18,7 @@ const client = new Client({
 	puppeteer: {
 		headless: false
 	},
-	clientId: "aves_bot",
+	clientId: "alves_bot",
 })})
 
 client.on("qr", (qr) => {
@@ -35,6 +35,7 @@ client.on("disconnected", (reason) => {
 
 client.on("ready", () => {
 	console.log(chalk.green("Programa On-line"))
+	// console.log(getChats())
 });
 
 client.initialize();
