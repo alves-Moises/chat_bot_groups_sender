@@ -73,54 +73,28 @@ client.on("group_leave", async (group_update, msg) => {
 })
 
 client.on("message", async (msg) => {
-
-    
-    
-    // chats.forEach(groupCollapsed => {
-    //     console.log(group)
-    //     console.log('\n')
-    // });
-
-    // console.log(groups)
-
-
-
-
     let msgLower = msg.body.toLowerCase().trim()
     let from = msg.from
-    let send_message = client.sendMessage
-    
-
-    console.log(msg.body)
-    console.log(msg.from)
-    try{
-        client.sendMessage("120363133137637660@g.us", `${msg.from}\n${msg.body}`)
-    }catch{
-        client.sendMessage("120363133137637660@g.us", `${msg.from}\nMensagem vazia...`)
-    }
-
-    // Reaction
-
-    // .msg.react()
-    
-    
-    // client.sendMessage("120363085795043818@g.us", "testando isso aqui...")
-
-
-
-    
     user = await msg.getContact()
+    const my_group = "120363133137637660@g.us"
+
+    
+    // ==== message to my group =====
+    if(!(CheckGroupID(from))){
+        console.log(chalk.yellow(msg.from))
+        console.log(msg.body)
+        console.log('\n')
+        client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
+
+    
+    }else{
+        console.log(`${chalk.red("Ignorando" ) + " " + chalk.yellow(from)}`)
+    }
+    
+
     if(msg.body == prefix + 'ping'){
         msg.reply('pong')
         console.log(`ping... ${chalk.yellow(`${user.pushname}`)}`)    
-    }
-
-    if(msgLower == "gay acima"){
-        client.sendMessage(from, "gay abaixo")
-    }
-
-    if(msgLower.includes("alves")){
-        msg.reply("oie")
     }
 })
 
