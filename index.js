@@ -1,25 +1,26 @@
 
 console.log('Entrando... Aguarde')
 
-const { MessageMedia, Reaction, getChats } = require("whatsapp-web.js")
+const { MessageMedia } = require("whatsapp-web.js")
 const client = require("./src/clientStart.js")
 // const { List , Client , LocalAuth , MessageMedia , Buttons, Reaction } = require("whatsapp-web.js");
 const chalk = require("chalk");
 
 const prefix = '?'
-const { GetGroupsArray, GetReactionsObj } = require("./src/json_functions.js");
-const { error } = require("console");
+const { 
+    GetGroupsArray, 
+    GetReactionsObj, 
+    GetAnswerObj ,
+    CheckGroupID
+} = require("./src/json_functions.js");
 
-const welcome_msg = () => {
-    const text = `
-        bem-vindo ao grupo
-        Me chame de alves
-        Bot em construcao mas se quiser ser nossa cobaia, fique a vontade ;)
-        automações para whatsapp me chame pv
-    `
+const {
+    TIMessage,
+    AutomMessageADS,
+    WelcomeMsg,
+    AutoMessageURL
+} = require("./src/automessage_functions.js")
 
-    return text
-}
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
