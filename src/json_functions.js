@@ -16,4 +16,30 @@ const GetReactionsObj = () => {
     return dados[0]
 }
 
-module.exports = {GetGroupsArray, GetReactionsObj}
+const GetAnswerObj = () => {
+    const answerPatch = path.resolve(__dirname, "./json/answer.json")
+    dados = JSON.parse(fs.readFileSync(answerPatch))
+
+    return dados[0]
+}
+
+const CheckGroupID = (group_id) => {
+    const groupsFilePATH = path.resolve(__dirname, "./json/groups.json")
+    const except_groupsFilePATH = path.resolve(__dirname, "./json/except_groups.json")
+
+    dados = JSON.parse(fs.readFileSync(groupsFilePATH))
+    dados_exept = JSON.parse(fs.readFileSync(except_groupsFilePATH))
+
+    if(dados.includes(group_id) || dados_exept.includes(group_id)){
+        return true
+    }
+    return false
+}
+
+
+module.exports = { 
+    GetGroupsArray, 
+    GetReactionsObj,
+    GetAnswerObj,
+    CheckGroupID
+}
