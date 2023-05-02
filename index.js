@@ -150,3 +150,13 @@ client.on("message", async(msg) => {
         }
     }
 })
+
+// ============= Answer in json ================
+client.on("message", async (msg) => {
+    let msgLower = msg.body.toLowerCase().trim()
+
+    answer_obj = GetAnswerObj()
+    if(Object.keys(answer_obj).includes(msgLower)){
+        msg.reply(answer_obj[msgLower])
+    }
+})
