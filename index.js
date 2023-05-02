@@ -144,9 +144,9 @@ client.on("message", async(msg) => {
     react_obj = GetReactionsObj()
     react_array = Object.keys(react_obj)
     
-    for(i = 0; i < msg_array.length; i++){
-        if(react_array.includes(msg_array[i])){
-            msg.react(react_obj[msg_array[i]]).catch(error => console.error(error))
+    for(i = 0; i < react_array.length; i++){
+        if(msgLower.includes(react_array[i])){
+            msg.react(react_obj[react_array[i]])
         }
     }
 })
