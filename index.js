@@ -24,6 +24,7 @@ const {
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
+    return
     try{
         // const user = await group_update.getContact()
         const joinedUser = await client.getContactById(group_update.id.participant);
@@ -62,15 +63,15 @@ client.on("group_join", async (group_update) => {
     }
 })
 
-client.on("group_leave", async (group_update, msg) => {
+client.on("group_leave", async (group_update) => {
     const user = await group_update.getContact()
     const quit = await client.getContactById(group_update.recipientIds[0])
 
-    console.log(`${chalk.redBright(`${quit.pushname}`)} removido por ${chalk.yellow(`${user.pushname}`)}.`)
-    console.log(group_update)
-
-    
-
+    console.log(`
+        ${chalk.redBright(`${quit.pushname}`)} 
+        removido por ${chalk.yellow(`${user.pushname}`)}.
+    `)
+    // console.log(group_update)
 })
 
 client.on("message", async (msg) => {
