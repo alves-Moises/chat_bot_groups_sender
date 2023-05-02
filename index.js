@@ -101,16 +101,38 @@ client.on("message", async (msg) => {
 
 // ======== Automation ads =============
 client.on("message", async (msg) => {
-    
-    
+    const users = ["555481615041@c.us", "558498211934@c.us"]
     let msgLower = msg.body.toLowerCase().trim()
     let from = msg.from
-    if(msgLower != "alves"){ return }
+    if(!users.includes(from) || !(msgLower.includes("propagandati") || msgLower.includes("propagandabot")) ){ 
+        return 
+    }
+
     group_array = GetGroupsArray()
 
+    //========= send messages... ====================
     for(i = 0; i < group_array.length; i++){
-        // client.sendMessage(group_array[i], "Boa noite")
-        console.log(`Enviando mensagem para  ${group_array[i]}`)
+        if(msgLower.includes("propagandati")){
+            client.sendMessage(group_array[i], TIMessage())
+            console.l
+        }else{
+            var media_url = AutoMessageURL()
+
+            media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
+
+            client.sendMessage(group_array[i],
+                media,
+                {
+                    caption: AutomMessageADS()
+                }
+            )  
+        }
+        
+
+        console.log(`
+            Enviando mensagem para  ${chalk.red(i)}:
+            ${chalk.yellow(group_array[i])}
+        `)
     }
 })
 
