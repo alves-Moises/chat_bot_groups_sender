@@ -36,9 +36,9 @@ const TIMessage = () => {
 const AutomMessageADS = () => {
     return `
         _*Chegou a solução mais fácil e rápida para o envio de mensagens em massa!*_
-        Agora você economiza tempo, pois não precisará ~gastá-lo configurando e enviando cada mensagem~. 
+        Agora você economiza tempo, pois não precisará gastá-lo enviando cada mensagem. 
 
-        A automação do envio dessa ferramenta, permite que você faça isso tudo de maneira *automática*, 
+        A automação do envio de mensagens, permite que você faça isso tudo de maneira *automática*, 
         economizando tempo e possibilitando maior *eficiência e agilidade*. 
 
         *Não perca mais tempo!*
