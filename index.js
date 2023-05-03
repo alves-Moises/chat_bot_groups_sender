@@ -29,6 +29,9 @@ client.on("group_join", async (group_update) => {
     return
     try{
         // const user = await group_update.getContact()
+        let chat = await group_update.getChat()
+        if(CheckIgnoreReacts(group_update.from)){return}   // ignore list
+
         const joinedUser = await client.getContactById(group_update.id.participant);
         let mentions = []
         mentions.push(joinedUser)
