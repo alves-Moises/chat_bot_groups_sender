@@ -11,7 +11,9 @@ const {
     GetGroupsArray, 
     GetReactionsObj, 
     GetAnswerObj ,
-    CheckGroupID
+    CheckGroupID,
+    CheckDay,
+    CheckIgnoreReacts
 } = require("./src/json_functions.js");
 
 const {
