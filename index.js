@@ -162,7 +162,7 @@ client.on("message", async(msg) => {
     let from = msg.from
 
 
-    if(CheckIgnoreReacts(from)){return}
+    if(CheckIgnoreReacts(from)){return}   // ignore list
     react_obj = GetReactionsObj()
     react_array = Object.keys(react_obj)
     
