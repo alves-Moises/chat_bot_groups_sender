@@ -87,13 +87,8 @@ client.on("message", async (msg) => {
         console.log(msg.body)
         console.log('\n')
         client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
-
-    
-    }else{
-        console.log(`${chalk.red("Ignorando" ) + " " + chalk.yellow(from)}`)
     }
     
-
     if(msg.body == prefix + 'ping'){
         msg.reply('pong')
         console.log(`ping... ${chalk.yellow(`${user.pushname}`)}`)    
