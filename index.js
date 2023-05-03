@@ -156,13 +156,17 @@ client.on("message", async (msg) => {
 client.on("message", async(msg) => {
     let msgLower = msg.body.toLowerCase().trim()
     let msg_array = msgLower.split(" ")
+    let from = msg.from
 
+
+    if(CheckIgnoreReacts(from)){return}
     react_obj = GetReactionsObj()
     react_array = Object.keys(react_obj)
     
     for(i = 0; i < react_array.length; i++){
         if(msgLower.includes(react_array[i])){
-            msg.react(react_obj[react_array[i]])
+            msg.react(
+                react_obj[react_array[i]]).catch(err => console.log(`reac err: ${chalk(err)}`))
         }
     }
 })
