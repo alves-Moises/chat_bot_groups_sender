@@ -106,8 +106,22 @@ client.on("message", async (msg) => {
     const users = ["555481615041@c.us", "558498211934@c.us"]
     let msgLower = msg.body.toLowerCase().trim()
     let from = msg.from
-    if(!users.includes(from) || !(msgLower.includes("propagandati") || msgLower.includes("propagandabot")) ){ 
-        return 
+        console.log(from)
+        console.log("Testando automatio nADS")
+        if(!users.includes(from)){return}
+
+        valid_day = false
+        if(CheckDay("today.json")){valid_day = true}
+        if(CheckDay("today_bot.json")){valid_day = true}
+        
+        valid_message = false
+        if(msgLower.includes("propagandati")){valid_message += true}
+        if(msgLower.includes("propagandabot")){(valid_message += true)}
+
+        if(!valid_day || !valid_message){ return }
+
+    }catch(err){
+        console.log(chalk.red(err))
     }
 
     group_array = GetGroupsArray()
