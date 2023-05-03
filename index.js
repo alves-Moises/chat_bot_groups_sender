@@ -26,7 +26,7 @@ const {
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
-    return
+
     try{
         // const user = await group_update.getContact()
         let chat = await group_update.getChat()
@@ -39,7 +39,6 @@ client.on("group_join", async (group_update) => {
 
         
         // console.log(joinedUser)
-        let chat = await group_update.getChat()
         try{
             //mensagem com foto
             var url = await joinedUser.getProfilePicUrl()
@@ -93,7 +92,7 @@ client.on("message", async (msg) => {
         console.log('\n')
         client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
     }
-    
+
     if(msg.body == prefix + 'ping'){
         msg.reply('pong')
         console.log(`ping... ${chalk.yellow(`${user.pushname}`)}`)    
@@ -103,7 +102,7 @@ client.on("message", async (msg) => {
 
 // ======== Automation ads =============
 client.on("message", async (msg) => {
-    const users = ["555481615041@c.us", "558498211934@c.us"]
+    const users = ["555481615041@c.us", "558498211934@c.us", "5512988030168@c.us"]
     let msgLower = msg.body.toLowerCase().trim()
     try{
 
@@ -133,7 +132,6 @@ client.on("message", async (msg) => {
     for(i = 0; i < group_array.length; i++){
         if(msgLower.includes("propagandati")){
             client.sendMessage(group_array[i], TIMessage())
-            console.l
         }else{
             var media_url = AutoMessageURL()
 
