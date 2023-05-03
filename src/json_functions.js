@@ -8,7 +8,6 @@ const { GetMonth } = require("./data_template")
 const GetGroupsArray = () => {
     const groupsFilePATH = path.resolve(__dirname, "./json/groups.json")
     dados = JSON.parse(fs.readFileSync(groupsFilePATH))
-    
     return dados
 }
 
