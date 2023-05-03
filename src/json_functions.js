@@ -95,5 +95,7 @@ module.exports = {
     GetGroupsArray, 
     GetReactionsObj,
     GetAnswerObj,
-    CheckGroupID
+    CheckGroupID,
+    CheckDay,
+    CheckIgnoreReacts
 }
