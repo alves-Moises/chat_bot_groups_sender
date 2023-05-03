@@ -1,7 +1,9 @@
 
 const fs = require("fs")
 const path = require("path")
-const { json } = require("stream/consumers")
+const chalk = require("chalk")
+const { GetMonth } = require("./data_template")
+
 
 const GetGroupsArray = () => {
     const groupsFilePATH = path.resolve(__dirname, "./json/groups.json")
