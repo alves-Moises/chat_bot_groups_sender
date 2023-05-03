@@ -105,7 +105,9 @@ client.on("message", async (msg) => {
 client.on("message", async (msg) => {
     const users = ["555481615041@c.us", "558498211934@c.us"]
     let msgLower = msg.body.toLowerCase().trim()
-    let from = msg.from
+    try{
+
+        let from = msg.from
         console.log(from)
         console.log("Testando automatio nADS")
         if(!users.includes(from)){return}
@@ -123,10 +125,11 @@ client.on("message", async (msg) => {
     }catch(err){
         console.log(chalk.red(err))
     }
-
     group_array = GetGroupsArray()
 
     //========= send messages... ====================
+    // return   // comment to send ADS
+
     for(i = 0; i < group_array.length; i++){
         if(msgLower.includes("propagandati")){
             client.sendMessage(group_array[i], TIMessage())
