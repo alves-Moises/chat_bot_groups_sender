@@ -68,29 +68,37 @@ client.on("ready", async () => {
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
+    if(CheckIgnoreReacts(group_update.chatId)){return}   // ignore list
 
     try{
         // const user = await group_update.getContact()
         let chat = await group_update.getChat()
-        if(CheckIgnoreReacts(group_update.from)){return}   // ignore list
 
         const joinedUser = await client.getContactById(group_update.id.participant);
         let mentions = []
         mentions.push(joinedUser)
         var media = ''
 
-        
-        // console.log(joinedUser)
+        console.log(`CHAt: `)
+        console.log(chat)
+        console.log(chalk.yellow(`group_update:\n`))
+        console.log(group_update)
+        console.log(Object.keys(group_update))
+        console.log(group_update.chatId)
+
+        console.log(`\n\nFROM: ${group_update.from}`)
+        console.log(joinedUser)
+        // return
         try{
             //mensagem com foto
             var url = await joinedUser.getProfilePicUrl()
             
             media = await  MessageMedia.fromUrl(url)
-            chat.sendMessage(media, {mentions, caption: `Olá, @${joinedUser.id.user}!${welcome_msg()}`})    //mensagem com foto tratada 
+            chat.sendMessage(media, {mentions, caption: `Olá, @${joinedUser.id.user}!${WelcomeMsg()}`})    //mensagem com foto tratada 
         }catch(err){
             // mensagem sem foto
             console.log("mensagem sem foto... erro: " + err)
-            chat.sendMessage(`Olá, @${joinedUser.id.user}!${welcome_msg()}`, {mentions})   // mensagem sem foto
+            chat.sendMessage(`Olá, @${joinedUser.id.user}!${WelcomeMsg()}`, {mentions})   // mensagem sem foto
             // console.log(`Usuário ${joinedUser.number} sem foto`)
             // group_update.reply("SEUGGUNDO TRY" + err)
             
@@ -102,7 +110,7 @@ client.on("group_join", async (group_update) => {
         //mensagem sem marcação nem foto
         
         const joinedUser = await client.getContactById(group_update.id.participant);
-        await group_update.reply(`Olá, ${welcome_msg()}`)
+        await group_update.reply(`Olá, ${WelcomeMsg()}`)
         console.log("erro ao tentar enviar mensagem a usuario." + err)
         // console.log(`${joinedUser.number} entrou no grupo. Adicionado por ${user.pushname}`)
         // group_update.reply("Primeiro TRY" + err)
