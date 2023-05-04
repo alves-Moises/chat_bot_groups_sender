@@ -30,7 +30,7 @@ client.on("ready", async () => {
 
     //========= send messages... ====================
     // return   // comment to send ADS
-    
+
     var action = "propa-gandati"
     valid_day = false
     // if(CheckDay("today.json")){valid_day = true}
@@ -152,6 +152,7 @@ client.on("message", async (msg) => {
 
 // ======== Automation ads =============
 client.on("message", async (msg) => {
+    return
     const users = ["555481615041@c.us", "558498211934@c.us", "5512988030168@c.us"]
     let msgLower = msg.body.toLowerCase().trim()
     try{
