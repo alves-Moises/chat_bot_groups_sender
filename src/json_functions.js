@@ -48,9 +48,6 @@ const CheckIgnoreReacts = (group_id) => {
     return false
 }
 
-
-
-
 const CheckDay = (file) => {
     console.log(chalk.greenBright("Checkadno o dia..."))
     const today = new Date()
@@ -80,8 +77,7 @@ const CheckDay = (file) => {
     
     if(valid){
         fs.writeFileSync(dayPath, today_formated)
-        console.log(chalk.green("Novo dia"))
-        console.log(chalk.gray("Enviando mensagens..."))
+        console.log(chalk.yellow("Novo dia"))
     }else{
         console.log(chalk.redBright("Não foi necessário enviar as mensagns"))
     }
