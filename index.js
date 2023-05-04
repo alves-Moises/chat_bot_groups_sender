@@ -56,6 +56,15 @@ client.on("ready", async () => {
             }
             
             
+            console.log(`
+            Enviando mensagem para  ${chalk.red(i)}:
+            ${chalk.yellow(group_array[i])}`
+            )
+        }catch(err){
+            console.log("Erro mensagem. " + err)
+        }
+    }
+})
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
