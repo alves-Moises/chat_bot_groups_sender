@@ -21,8 +21,41 @@ const {
     AutomMessageADS,
     WelcomeMsg,
     AutoMessageURL
-} = require("./src/automessage_functions.js")
+} = require("./src/automessage_functions.js");
 
+
+client.on("ready", async () => {
+    
+    group_array = GetGroupsArray()
+
+    //========= send messages... ====================
+    // return   // comment to send ADS
+    
+    var action = "propa-gandati"
+    valid_day = false
+    // if(CheckDay("today.json")){valid_day = true}
+    if(CheckDay("today_bot.json")){valid_day = true}
+
+    if(!valid_day){ return }
+    for(i = 0; i < group_array.length; i++){
+        try{
+
+            if(action.includes("propagandati")){
+                client.sendMessage(group_array[i], TIMessage())
+            }else{
+                var media_url = AutoMessageURL()
+                
+                media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
+
+                client.sendMessage(group_array[i],
+                    media,
+                    {
+                        caption: AutomMessageADS()
+                    }
+                )  
+            }
+            
+            
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
