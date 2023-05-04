@@ -172,26 +172,31 @@ client.on("message", async (msg) => {
     // return   // comment to send ADS
 
     for(i = 0; i < group_array.length; i++){
-        if(msgLower.includes("propagandati")){
-            client.sendMessage(group_array[i], TIMessage())
-        }else{
-            var media_url = AutoMessageURL()
+        try{
 
-            media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
+            if(msgLower.includes("propagandati")){
+                client.sendMessage(group_array[i], TIMessage())
+            }else{
+                var media_url = AutoMessageURL()
+                
+                media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
 
-            client.sendMessage(group_array[i],
-                media,
-                {
-                    caption: AutomMessageADS()
-                }
-            )  
-        }
-        
-
-        console.log(`
+                client.sendMessage(group_array[i],
+                    media,
+                    {
+                        caption: AutomMessageADS()
+                    }
+                )  
+            }
+            
+            
+            console.log(`
             Enviando mensagem para  ${chalk.red(i)}:
             ${chalk.yellow(group_array[i])}
-        `)
+            `)
+        }catch(err){
+            console.log("Erro mensagem. " + err)
+        }
     }
 })
 
