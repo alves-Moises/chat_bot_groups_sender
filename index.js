@@ -221,6 +221,8 @@ client.on("message", async(msg) => {
 
 // ============= Answer in json ================
 client.on("message", async (msg) => {
+    let from = msg.from
+    if(CheckIgnoreReacts(from)){return}   // ignore list
     let msgLower = msg.body.toLowerCase().trim()
 
     answer_obj = GetAnswerObj()
