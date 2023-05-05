@@ -13,7 +13,8 @@ const {
     GetAnswerObj ,
     CheckGroupID,
     CheckDay,
-    CheckIgnoreReacts
+    CheckIgnoreReacts,
+    CheckAction
 } = require("./src/json_functions.js");
 
 const {
@@ -26,15 +27,15 @@ const {
 
 client.on("ready", async () => {
     
-    group_array = GetGroupsArray()
-
+    
     //========= send messages... ====================
     // return   // comment to send ADS
-
-    var action = "propa-gandati"
+    
+    const group_array = GetGroupsArray()
+    const action = CheckAction()
     valid_day = false
-    // if(CheckDay("today.json")){valid_day = true}
-    if(CheckDay("today_bot.json")){valid_day = true}
+    if(CheckDay("today.json")){valid_day = true}
+    // if(CheckDay("today_bot.json")){valid_day = true}
 
     if(!valid_day){ return }
     for(i = 0; i < group_array.length; i++){
@@ -148,7 +149,6 @@ client.on("message", async (msg) => {
         console.log(`ping... ${chalk.yellow(`${user.pushname}`)}`)    
     }
 })
-
 
 // ======== Automation ads =============
 client.on("message", async (msg) => {
