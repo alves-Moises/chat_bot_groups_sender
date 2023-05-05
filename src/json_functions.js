@@ -85,6 +85,13 @@ const CheckDay = (file) => {
     return valid
 }
 
+const CheckAction = () => {
+    const data = JSON.parse(fs.readFileSync("./src/json/open_action.json"))
+    data_string = data.toString()
+    return data_string
+}
+
+console.log(CheckAction())
 
 module.exports = { 
     GetGroupsArray, 
@@ -92,5 +99,6 @@ module.exports = {
     GetAnswerObj,
     CheckGroupID,
     CheckDay,
-    CheckIgnoreReacts
+    CheckIgnoreReacts,
+    CheckAction
 }
