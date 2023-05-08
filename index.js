@@ -33,11 +33,11 @@ client.on("ready", async () => {
     
     const group_array = GetGroupsArray()
     const action = CheckAction()
-    valid_day = false
-    if(CheckDay("today.json")){valid_day = true}
+    // valid_day = false
+    // if(CheckDay("today.json")){valid_day = true}
     // if(CheckDay("today_bot.json")){valid_day = true}
 
-    if(!valid_day){ return }
+    // if(!valid_day){ return }
     for(i = 0; i < group_array.length; i++){
         try{
 
