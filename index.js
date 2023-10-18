@@ -13,7 +13,8 @@ const {
     GetAnswerObj ,
     CheckGroupID,
     CheckIgnoreReacts,
-    CheckAction
+    CheckAction,
+    CheckADSGroup
 } = require("./src/json_functions.js");
 
 const {
