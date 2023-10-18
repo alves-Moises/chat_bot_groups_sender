@@ -179,64 +179,6 @@ client.on("message", async (msg) => {
     }
 })
 
-// ======== Automation ads =============
-client.on("message", async (msg) => {
-    return
-    const users = ["555481615041@c.us", "558498211934@c.us", "5512988030168@c.us"]
-    let msgLower = msg.body.toLowerCase().trim()
-    try{
-
-        let from = msg.from
-        console.log(from)
-        console.log("Testando automatio nADS")
-        if(!users.includes(from)){return}
-
-        valid_day = false
-        if(CheckDay("today.json")){valid_day = true}
-        if(CheckDay("today_bot.json")){valid_day = true}
-        
-        valid_message = false
-        if(msgLower.includes("propagandati")){valid_message += true}
-        if(msgLower.includes("propagandabot")){(valid_message += true)}
-
-        if(!valid_day || !valid_message){ return }
-
-    }catch(err){
-        console.log(chalk.red(err))
-    }
-    group_array = GetGroupsArray()
-
-    //========= send messages... ====================
-    // return   // comment to send ADS
-
-    for(i = 0; i < group_array.length; i++){
-        try{
-
-            if(msgLower.includes("propagandati")){
-                client.sendMessage(group_array[i], TIMessage())
-            }else{
-                var media_url = AutoMessageURL()
-                
-                media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
-
-                client.sendMessage(group_array[i],
-                    media,
-                    {
-                        caption: AutomMessageADS()
-                    }
-                )  
-            }
-            
-            
-            console.log(`
-            Enviando mensagem para  ${chalk.red(i)}:
-            ${chalk.yellow(group_array[i])}
-            `)
-        }catch(err){
-            console.log("Erro mensagem. " + err)
-        }
-    }
-})
 
 // ============ REACTION ================
 client.on("message", async(msg) => {
