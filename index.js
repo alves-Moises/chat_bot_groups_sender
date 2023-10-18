@@ -22,7 +22,7 @@ const {
     WelcomeMsg,
     AutoMessageURL,
     VihMessage
-    AutoMessageURL
+} = require("./src/automessage_functions.js");
 
 
 client.on("ready", async () => {
