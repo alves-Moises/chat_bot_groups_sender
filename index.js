@@ -25,20 +25,17 @@ const {
     VihMessage
 } = require("./src/automessage_functions.js");
 
+const my_group = "120363133137637660@g.us"
+const prefix = '?'
 
+//========= send messages... ====================
 client.on("ready", async () => {
-    
-    
-    //========= send messages... ====================
     // return   // comment to send ADS
-    
+
     const group_array = GetGroupsArray()
     const action = CheckAction()
-    // valid_day = false
-    // if(CheckDay("today.json")){valid_day = true}
-    // if(CheckDay("today_bot.json")){valid_day = true}
+    
 
-    // if(!valid_day){ return }
     for(i = 0; i < group_array.length; i++){
         try{
 
@@ -139,6 +136,7 @@ client.on("group_join", async (group_update) => {
     }
 })
 
+// ============ Leaving group ====================
 client.on("group_leave", async (group_update) => {
     const user = await group_update.getContact()
     const quit = await client.getContactById(group_update.recipientIds[0])
@@ -150,11 +148,11 @@ client.on("group_leave", async (group_update) => {
     // console.log(group_update)
 })
 
+// =========== Message to my group ============
 client.on("message", async (msg) => {
     let msgLower = msg.body.toLowerCase().trim()
     let from = msg.from
     user = await msg.getContact()
-    const my_group = "120363133137637660@g.us"
 
     
     // ==== message to my group =====
@@ -185,7 +183,7 @@ client.on("message", async(msg) => {
     let msgLower = msg.body.toLowerCase().trim()
     let msg_array = msgLower.split(" ")
     let from = msg.from
-
+    let chat = msg.getChat()
 
     if(CheckIgnoreReacts(from) || !(from == my_group)){ return }   // ignore list
     react_obj = GetReactionsObj()
@@ -197,6 +195,7 @@ client.on("message", async(msg) => {
                 react_obj[react_array[i]]).catch(err => console.log(`reac err: ${chalk(err)}`))
         }
     }
+
 })
 
 // ============= Answer in json ================
