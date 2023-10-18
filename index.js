@@ -166,6 +166,14 @@ client.on("message", async (msg) => {
         client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
     }
 
+    if(CheckADSGroup(from)){
+        console.log(chalk.green("ADS GROUPS"))
+        console.log(chalk.yellow(msg.from))
+        console.log(msg.body)
+        console.log('\n')
+        client.sendMessage(my_group, `ADS GROUP:\n${msg.from}\n${msg.body}`)
+    }
+
     if(msg.body == prefix + 'ping'){
         msg.reply('pong')
         console.log(`ping... ${chalk.yellow(`${user.pushname}`)}`)    
