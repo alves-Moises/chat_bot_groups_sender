@@ -89,7 +89,7 @@ client.on("ready", async () => {
 
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
-    if(CheckIgnoreReacts(group_update.chatId)){return}   // ignore list
+    if(CheckIgnoreReacts(group_update.chatId) || !(group_update.chatId == my_group)){return}   // ignore list
 
     try{
         // const user = await group_update.getContact()
