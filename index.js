@@ -42,7 +42,27 @@ client.on("ready", async () => {
         try{
 
             if(action.includes("propagandati")){
-                client.sendMessage(group_array[i], TIMessage())
+                await client.sendMessage(group_array[i], TIMessage())
+                // await client.sendMessage(group_array[i], `${i}`)
+                // await client.sendMessage(my_group, `${i}: ${group_array[i]}`)
+
+            }else if(action.includes("propagandavih")){
+                urls = [img1, img2, img3, img4]
+                
+                for(j = 0; j < urls.length; j++){
+
+                    // sending messages...
+                    media = await MessageMedia.fromUrl(urls[j], {unsafeMime:true})
+                    await client.sendMessage(group_array[i],
+                        media,
+                    )
+
+                }
+                
+
+                // message
+                client.sendMessage(group_array[i], VihMessage())
+
             }else{
                 var media_url = AutoMessageURL()
                 
