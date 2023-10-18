@@ -19,6 +19,9 @@ const TIMessage = () => {
         instalação do opl para rodar jogos nos ps2 via pen drive
         troca de pasta térmica
         reparo em circuitos eletrônicos
+        instalação e atualização recallbox
+        raspeberry pi
+
         limpeza
 
 
