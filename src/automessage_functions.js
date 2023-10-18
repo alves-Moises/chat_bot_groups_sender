@@ -96,5 +96,6 @@ module.exports = {
     TIMessage,
     AutomMessageADS,
     WelcomeMsg,
-    AutoMessageURL
+    AutoMessageURL,
+    VihMessage
 }
