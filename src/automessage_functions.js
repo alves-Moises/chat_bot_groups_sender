@@ -88,7 +88,7 @@ const VihMessage = () => {
     🎁 Descontos imperdíveis, conjuntos a partir de 99,99 😍
     💥 PEÇAS  LIMITADAS, CORRA!  
     E o melhor? Para facilitar sua compra, estou à disposição no WhatsApp 
-    https://wa.me/message/SWIKUQZKBAB6F1 para tirar todas as dúvidas . 
+    https://encurtador.com.br/lswBX para tirar todas as dúvidas . 
     Vamos às compras! 🛒📲
     `
 }
