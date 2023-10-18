@@ -2,7 +2,7 @@
 const fs = require("fs")
 const path = require("path")
 const chalk = require("chalk")
-const { GetMonth } = require("./data_template")
+const { GetMonth } = require("./data_template.js")
 
 
 const GetGroupsArray = () => {
@@ -35,6 +35,12 @@ const CheckGroupID = (group_id) => {
         return true
     }
     return false
+}
+
+const CheckADSGroup = (group_id) => {  //check if is listed ads group
+    const groupsFilePATH = path.resolve(__dirname, "./json/groups.json")
+    dados = JSON.parse(fs.readFileSync(groupsFilePATH))
+    return dados.includes(group_id)
 }
 
 const CheckIgnoreReacts = (group_id) => {
@@ -91,14 +97,14 @@ const CheckAction = () => {
     return data_string
 }
 
-console.log(CheckAction())
 
 module.exports = { 
     GetGroupsArray, 
     GetReactionsObj,
     GetAnswerObj,
-    CheckGroupID,
+    CheckAction,
+    CheckADSGroup,
     CheckDay,
     CheckIgnoreReacts,
-    CheckAction
+    CheckGroupID
 }
