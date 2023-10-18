@@ -81,6 +81,17 @@ const AutoMessageURL =() => {
     return "https://images.unsplash.com/photo-1642724978500-c13b821afe04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80"
     //return "https://encurtador.com.br/jGKR6"
 }
+
+const VihMessage = () => {
+    return `
+    🎉 SUPER PROMOÇÃO, Space Fit ! 
+    🎁 Descontos imperdíveis, conjuntos a partir de 99,99 😍
+    💥 PEÇAS  LIMITADAS, CORRA!  
+    E o melhor? Para facilitar sua compra, estou à disposição no WhatsApp 
+    https://wa.me/message/SWIKUQZKBAB6F1 para tirar todas as dúvidas . 
+    Vamos às compras! 🛒📲
+    `
+}
 module.exports = {
     TIMessage,
     AutomMessageADS,
