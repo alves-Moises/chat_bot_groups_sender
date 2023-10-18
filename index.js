@@ -245,7 +245,7 @@ client.on("message", async(msg) => {
     let from = msg.from
 
 
-    if(CheckIgnoreReacts(from)){return}   // ignore list
+    if(CheckIgnoreReacts(from) || !(from == my_group)){ return }   // ignore list
     react_obj = GetReactionsObj()
     react_array = Object.keys(react_obj)
     
