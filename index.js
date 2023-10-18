@@ -17,6 +17,7 @@ const {
     CheckADSGroup
 } = require("./src/json_functions.js");
 
+const { img1, img2, img3 } = require("./src/assets/urls.js")
 const {
     TIMessage,
     AutomMessageADS,
