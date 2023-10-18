@@ -34,6 +34,18 @@ const TIMessage = () => {
         wa.me/5522999668509
         aceitamos pix 📲
     `
+    // return `*Grupo Voltado pra compra e venda*
+
+    //     Divulguem a vontade mas evitem flood
+        
+    //     ❌Proibido IPTV
+    //     ❌Proibidio divulgação de blitz/lei seca
+    //     ❌Proibido qualquer coisa que inflinja a lei
+    //     ❌Não chamar no pv sem permissão
+        
+    //     Link do grupo:
+    //     https://chat.whatsapp.com/EGHUn7LcGvrAPTapYCDXxM
+    //     `
 }
 
 const AutomMessageADS = () => {
