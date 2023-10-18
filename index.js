@@ -6,7 +6,6 @@ const client = require("./src/clientStart.js")
 // const { List , Client , LocalAuth , MessageMedia , Buttons, Reaction } = require("whatsapp-web.js");
 const chalk = require("chalk");
 
-const prefix = '?'
 const { 
     GetGroupsArray, 
     GetReactionsObj, 
