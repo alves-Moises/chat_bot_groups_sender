@@ -20,6 +20,8 @@ const {
     TIMessage,
     AutomMessageADS,
     WelcomeMsg,
+    AutoMessageURL,
+    VihMessage
     AutoMessageURL
 } = require("./src/automessage_functions.js");
 
