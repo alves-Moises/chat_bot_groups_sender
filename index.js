@@ -51,7 +51,8 @@ client.on("ready", async () => {
 
                     // sending messages...
                     media = await MessageMedia.fromUrl(urls[j], {unsafeMime:true})
-                    await client.sendMessage(group_array[i],
+                    await client.sendMessage(
+                        group_array[i],
                         media,
                     )
 
