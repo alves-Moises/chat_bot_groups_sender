@@ -60,6 +60,7 @@ client.on("ready", async () => {
 
                 // message
                 client.sendMessage(group_array[i], VihMessage())
+                // client.sendMessage(my_group, VihMessage())
 
             }else{
                 var media_url = AutoMessageURL()
