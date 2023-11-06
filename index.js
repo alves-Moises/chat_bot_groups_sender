@@ -89,8 +89,8 @@ app.get('/send', async function (req, res){
 
     const group_array = GetGroupsArray()
     const action = CheckAction()
+    const { urls } = require("./src/assets/urls.js")
     
-
     for(i = 0; i < group_array.length; i++){
         try{
 
