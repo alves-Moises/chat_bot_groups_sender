@@ -142,6 +142,22 @@ app.get('/send', async function (req, res){
     }
 })
 
+//========= send messages... ====================
+
+client.on("ready", async () => {
+    // return   // comment to send ADS
+
+    const group_array = GetGroupsArray()
+    const action = CheckAction()
+    const { urls } = require("./src/assets/urls.js")
+    
+    
+    // initializating server...
+    app.listen(port, () => {
+        console.log(`Exemplo app node rodando no endereço http://localhost:${port}`)
+    });
+})
+
 // ============  Joining group ===================
 client.on("group_join", async (group_update) => {
     if(CheckIgnoreReacts(group_update.chatId) || !(group_update.chatId == my_group)){return}   // ignore list
