@@ -100,7 +100,6 @@ app.get('/send', async function (req, res){
                 // await client.sendMessage(my_group, `${i}: ${group_array[i]}`)
 
             }else if(action.includes("propagandavih")){
-                urls = [img1, img2, img3, img4]
                 
                 for(j = 0; j < urls.length; j++){
 
