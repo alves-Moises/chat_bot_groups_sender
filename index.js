@@ -1,7 +1,7 @@
 
 console.log('Entrando... Aguarde')
 
-const { MessageMedia } = require("whatsapp-web.js")
+const { MessageMedia, Client, GroupNotificationTypes } = require("whatsapp-web.js")
 const client = require("./src/clientStart.js")
 // const { List , Client , LocalAuth , MessageMedia , Buttons, Reaction } = require("whatsapp-web.js");
 const chalk = require("chalk");
@@ -107,7 +107,7 @@ app.get('/send', async function (req, res){
                     media = await MessageMedia.fromUrl(urls[j], {unsafeMime:true})
                     await client.sendMessage(
                         group_array[i],
-                        media,
+                        media
                     )
 
                 }
@@ -122,7 +122,8 @@ app.get('/send', async function (req, res){
                 
                 media = await MessageMedia.fromUrl(media_url, {unsafeMime:true})
 
-                client.sendMessage(group_array[i],
+                client.sendMessage(
+                    group_array[i],
                     media,
                     {
                         caption: AutomMessageADS()
