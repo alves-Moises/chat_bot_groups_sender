@@ -2,20 +2,21 @@ const { addDays } = require("date-fns")
 
 const TIMessage = () => {
     return `
-        *Alves informática*
-
-        🖥️💻 Manutenção de computadores e notebooks
-        formatação
-        atualização de drives
-        instalação de softwares
-        recuperação de arquivos
-        troca de pasta térmica
-        limpeza
-        manutençaõ de fonte
-        manutenção preventiva
-        configuração de impressora
-
-        🕹️💽 Manutenção de video games
+    
+    *Alves Informática*
+    
+    *A sua solução em tecnologia!* 🚀
+    
+    Oferecemos serviços de qualidade em:
+    
+    🖥️💻 Manutenção de computadores e notebooks
+    - Formatação, atualização e instalação de softwares
+    - Recuperação de arquivos perdidos ou deletados
+    - Troca de pasta térmica e limpeza interna
+    - Reparo de fontes e circuitos elétricos
+    - Configuração de impressoras e redes
+    
+    🕹️💽 Manutenção de video games
     - Instalação do OPL para rodar jogos de PS2 via pen drive
     - Troca de pasta térmica e limpeza interna
     - Reparo de circuitos eletrônicos
@@ -28,17 +29,17 @@ const TIMessage = () => {
     - Limpeza de conector de carga e entrada de fone
     - Desbloqueio e restauração de sistema
     
-        limpeza
-
-
-        📱📱manutenção em celulares
-        troca de tela
-        aplicação de película
-        e outros serviços
-
-        chamar via chat ou wp
-        wa.me/5522999668509
-        aceitamos pix 📲
+    🌐🌐 Desenvolvimento de sites para pequenas empresas
+    - Criação de sites responsivos, modernos e otimizados para o Google
+    - Hospedagem, domínio e suporte técnico inclusos a combinar
+    
+    
+    Entre em contato pelo chat ou pelo WhatsApp e faça seu orçamento sem compromisso. Aceitamos PIX 📲
+    
+    wa.me/5522999668509
+    
+    Alves Informática - A sua solução em tecnologia! 🚀
+    
     `
     // return `*Grupo Voltado pra compra e venda*
 
