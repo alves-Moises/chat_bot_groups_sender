@@ -91,13 +91,14 @@ const AutoMessageURL =() => {
 
 const VihMessage = () => {
     return `
-    🎉 SUPER PROMOÇÃO, Space Fit ! 
-    🎁 Descontos imperdíveis, conjuntos a partir de 99,99 😍
-    💥 PEÇAS  LIMITADAS, CORRA!  
-    E o melhor? Para facilitar sua compra, estou à disposição no WhatsApp 
-    https://encurtador.com.br/lswBX para tirar todas as dúvidas . 
-    Vamos às compras! 🛒📲
-    `
+        LANÇAMENTO COLEÇÃO INTENSE | pré venda ⚡️ 
+        Conjuntos vestindo *P|M|G*
+        Trazendo mais conforto e segurança para seus treinos, 
+        além de ZERO TRANSPARÊNCIA também garantimos 
+        CONFORTO E SEGURANÇA para prática de qualquer atividade física 
+        🥰 DÚVIDAS/ WhatsApp 
+        https://wa.me/message/SWIKUQZKBAB6F1
+            `
 }
 module.exports = {
     TIMessage,
