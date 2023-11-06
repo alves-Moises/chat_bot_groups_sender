@@ -16,7 +16,6 @@ const {
     CheckADSGroup
 } = require("./src/json_functions.js");
 
-const { img1, img2, img3 } = require("./src/assets/urls.js")
 const {
     TIMessage,
     AutomMessageADS,
@@ -28,9 +27,65 @@ const {
 const my_group = "120363133137637660@g.us"
 const prefix = '?'
 
-//========= send messages... ====================
-client.on("ready", async () => {
-    // return   // comment to send ADS
+
+// initalizating routes...
+const express = require('express');
+const { group } = require("console");
+const { resolveSoa } = require("dns");
+const app = express()
+const port = 3000
+
+
+//=== ROUTES ===
+
+app.get("/", (req, res) => {
+    res.send("Hello word")
+})
+
+
+// getting groups
+app.get("/groups", async (req, res) => {
+    console.log(chalk.yellow("Geting groups..."))
+    try{
+
+        const chats = await client.getChats();
+        const groups = chats.filter(chat => chat.isGroup);
+
+        const groupInfo = groups.map(group =>({
+            id: group.id._serialized,
+            name: group.name,
+            participants: group.participants.length,
+            // description: group.description
+        }))
+
+        // console.log(chats)
+        // console.log(groups)
+        res.status(200).json({
+            status: true,
+            groups: groupInfo
+        })
+        console.log(chalk.green("Succes getting groups!"))
+
+    }catch(error){
+        console.log()
+        res.status(500).json({
+            status: false,
+            message: `Error: ${error}`
+        })
+        console.log(chalk.red("Error getting groups..."))
+    }
+})
+
+// just for debug and learning...
+app.get('/test/:msg', function (req, res) {
+    client.sendMessage(my_group, req.params.msg)
+    console.log(req.params.msg)
+    res.send("Mensagem enviada com suecsso.")
+});
+
+app.get('/send', async function (req, res){
+    console.log(chalk.green("Enviando mensagens..."))
+    res.send("Enviando mensagens...")
 
     const group_array = GetGroupsArray()
     const action = CheckAction()
