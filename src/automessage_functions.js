@@ -16,12 +16,18 @@ const TIMessage = () => {
         configuração de impressora
 
         🕹️💽 Manutenção de video games
-        instalação do opl para rodar jogos nos ps2 via pen drive
-        troca de pasta térmica
-        reparo em circuitos eletrônicos
-        instalação e atualização recallbox
-        raspeberry pi
-
+    - Instalação do OPL para rodar jogos de PS2 via pen drive
+    - Troca de pasta térmica e limpeza interna
+    - Reparo de circuitos eletrônicos
+    - Instalação e atualização do Recalbox para jogar clássicos retrô
+    - Montagem e configuração de Raspberry Pi
+    
+    📱📱 Manutenção de celulares
+    - Troca de tela e aplicação de película
+    - Reparo de botões, alto-falantes e microfones
+    - Limpeza de conector de carga e entrada de fone
+    - Desbloqueio e restauração de sistema
+    
         limpeza
 
 
