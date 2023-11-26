@@ -30,8 +30,6 @@ const prefix = '?'
 
 // initalizating routes...
 const express = require('express');
-const { group } = require("console");
-const { resolveSoa } = require("dns");
 const app = express()
 const port = 3000
 
@@ -114,7 +112,7 @@ app.get('/send', async function (req, res){
                 
 
                 // message
-                client.sendMessage(group_array[i], VihMessage())
+                await client.sendMessage(group_array[i], VihMessage())
                 // client.sendMessage(my_group, VihMessage())
 
             }else{
@@ -145,16 +143,10 @@ app.get('/send', async function (req, res){
 //========= send messages... ====================
 
 client.on("ready", async () => {
-    // return   // comment to send ADS
-
-    const group_array = GetGroupsArray()
-    const action = CheckAction()
-    const { urls } = require("./src/assets/urls.js")
-    
     
     // initializating server...
     app.listen(port, () => {
-        console.log(`Exemplo app node rodando no endereço http://localhost:${port}`)
+        console.log(chalk.yellow(`http://localhost:${port}`))
     });
 })
 
