@@ -219,13 +219,25 @@ client.on("message", async (msg) => {
     let from = msg.from
     user = await msg.getContact()
 
+    //DEBUG
+    // console.log(`
+    // =================
+    // FROM: ${from}
+    // USER: ${user}
+    // MESSAGE: ${msgLower}
+    // =================
+    // `)
+
+    // console.log(msg)
+
+
     
     // ==== message to my group =====
     if(!(CheckGroupID(from))){
         console.log(chalk.yellow(msg.from))
         console.log(msg.body)
         console.log('\n')
-        client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
+        // client.sendMessage(my_group, `${msg.from}\n${msg.body}`)
     }
 
     if(CheckADSGroup(from)){
@@ -233,7 +245,7 @@ client.on("message", async (msg) => {
         console.log(chalk.yellow(msg.from))
         console.log(msg.body)
         console.log('\n')
-        client.sendMessage(my_group, `ADS GROUP:\n${msg.from}\n${msg.body}`)
+        // client.sendMessage(my_group, `ADS GROUP:\n${msg.from}\n${msg.body}`)
     }
 
     if(msg.body == prefix + 'ping'){
